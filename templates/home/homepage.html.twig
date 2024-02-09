@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Play With URLs
+{% endblock %}
+
+{% block body %}
+<div id="webapp" class="  
+d-flex
+align-items-center
+justify-content-center">
+    <!-- <h1>{{title}}</h1>
+    <div>Osu!</div>
+    <br><br>
+    <input placeholder="Enter URL to Shorten"><button>Shorten</button>
+    <br><br>
+    <input placeholder="Enter URL to Inflate"><button>Inflate</button> -->
+
+    <!-- <div id="container">
+        <div id="panels">
+            <section id="panel-left">
+                <textarea id="url-input"></textarea>
+                <button>Clear</button>
+            </section>
+            <section id="panel-right">
+                <div id="url-output">
+                    <a href="" id="output-link"></a>
+                </div>
+                <button>Copy</button>
+            </section>
+        </div>
+        <div id="controls">
+            <button>Process</button>
+        </div>
+
+    </div> -->
+
+    <div id="container" class="row container justify-content-between">
+        <!-- above panels -->
+        <section id="panel-left" class="col-md-5 my-2">
+            <div class="form-control">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span>${panelLeftLabel}</span>
+                    <button v-on:click="clearLeftPanel" class="btn util-btn">
+                        <i class="fas fa-times"></i>&nbsp;Clear
+                    </button>
+
+                </div>
+                <textarea v-model="panelLeft" class="form-control my-1" id="url-input"
+                :placeholder="`Enter URL to ` + toggleVal + ` here&#10;Ex.: https://aaronsio.netlify.app/`"
+                ></textarea>
+
+            </div>
+        </section>
+        <section id="panel-mid" class="col-md-2">
+
+            <div 
+                id="panel-mid-cont"
+                class="d-flex flex-column form-control justify-content-center align-items-center
+            ">
+
+                <button v-on:click="toggleSwap" class="btn mt-2">
+                    <i class="fas fa-exchange-alt"></i>&nbsp;Swap
+                </button>
+                <button v-on:click="processLink" class="btn my-2">
+                    <i class="fa-solid fa-gears"></i>&nbsp;Process
+                </button>
+            </div>
+
+        </section>
+        <section id="panel-right" class="col-md-5 my-2">
+            <div class="form-control">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span>${panelRightLabel}</span>
+                    <button class="btn util-btn" v-on:click="copyURLToClipboard">
+                        <i class="far fa-copy"></i>&nbsp;Copy
+                    </button>
+
+                </div>
+                <div id="url-output" class="form-control my-1">
+                    <a :href="(panelRight==='Output here')?'https://aaronsio.netlify.app/':panelRight" target="_blank" id="output-link" class="">${panelRight}</a>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+
+{% endblock %}
