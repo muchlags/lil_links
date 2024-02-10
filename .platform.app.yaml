@@ -40,5 +40,5 @@ hooks:
 web:
   locations: 
     '/': 
-      root: "web"
+      root: "build"
       passthru: "/index.php"
