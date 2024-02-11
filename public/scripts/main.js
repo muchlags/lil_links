@@ -59,9 +59,9 @@ $(document).ready(function () {
             },
             makeFetchRequest: function (url) {
                 const endpoint = (this.toggleVal === 'shorten' ? '/s/' : '/i/');
-                // url = encodeURIComponent(url);
+                url = encodeURIComponent(url);
                 // console.log(url);
-                // url = btoa(url);
+                url = btoa(url);
                 // console.log(url);
                 fetch(endpoint+url, {
                     method: 'GET',

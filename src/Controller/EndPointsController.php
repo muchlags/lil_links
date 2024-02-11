@@ -15,8 +15,9 @@ class EndPointsController extends AbstractController
     public function shorten(string $url, EntityManagerInterface $em): JsonResponse
     {
 
-        // $url = base64_decode($url);
-        // $url = urldecode($url);
+        $url = base64_decode($url);
+        $url = urldecode($url);
+        // dd($url);
 
         // return $this->render('home/homepage.html.twig', [
         //     'title' => 'Home',
@@ -59,6 +60,9 @@ class EndPointsController extends AbstractController
     #[Route('/i/{url}', name: 'url_inflater', requirements: ['url' => '.+'])]
     public function inflate(string $url, EntityManagerInterface $em):Response
     {
+        $url = base64_decode($url);
+        $url = urldecode($url);
+
         $url = explode("/",$url);
         $url = $url[count($url) - 1];
 
