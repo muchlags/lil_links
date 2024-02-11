@@ -15,10 +15,8 @@ class EndPointsController extends AbstractController
     public function shorten(string $url, EntityManagerInterface $em): JsonResponse
     {
 
-        // dd($url);
         // $url = base64_decode($url);
-        $url = urldecode($url);
-        // dd($url);
+        // $url = urldecode($url);
 
         // return $this->render('home/homepage.html.twig', [
         //     'title' => 'Home',
@@ -39,9 +37,11 @@ class EndPointsController extends AbstractController
         //save to db
         $newKey = '';
         $isDupFlag = true;
+        // dd($url);
         while($isDupFlag){
             $newKey = $this->getNewKey();
             $isDupFlag = $this->isDup($newKey, $em);
+            // dd($url);
         }
         // dd([$newKey, $url]);
         $linkpairs->setLpKey($newKey);
