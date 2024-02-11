@@ -1,3 +1,6 @@
+Demo: <a href="https://main-bvxea6i-r3vtsimzsrgdq.us.platformsh.site/">Click Me!</a>
+<br><br>
+
 Symfony for Platform.sh
 =======================
 
